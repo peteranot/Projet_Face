@@ -34,13 +34,23 @@ class HomeController extends Controller
         $id_user = '';
         return view('home',compact('listUsers', 'listjobseeker', 'listdiplome', 'id_user'));
     }
-
+	
+	/**
+     * Function to go to view recrutement
+     *
+     * @return view recrutement
+     */
     public function indexRecrutement(jobseeker $jobseeker)
     {
         $listjobseeker = $jobseeker->all();
         return view('recrutement',compact('listjobseeker'));
     }
-
+	
+	/**
+     * Function to create a new user
+     *
+     * @return $listUsers
+     */
     public function createUser(User $user, jobseeker $jobseeker, diplome $diplome)
     {
         $user->name = $_POST['name_user'];
@@ -56,7 +66,11 @@ class HomeController extends Controller
         return view('home',compact('listUsers', 'listjobseeker', 'listdiplome', 'id_user'));
     }
 
-    
+    /**
+     * Function to go in the form update user
+     *
+     * @return view formUpdateUser
+     */
     public function formupdateUser(User $user, jobseeker $jobseeker, diplome $diplome){
         //change etat
         $id_user = $_POST['btn_update_iduser'];
@@ -68,6 +82,11 @@ class HomeController extends Controller
 
     }
 	
+	/**
+     * Function to update a user
+     *
+     * 
+     */
 	public function updateUser(User $user, jobseeker $jobseeker, diplome $diplome){
         //get info jobseeker
         $id_user = $_POST['btn_update_iduser'];
@@ -91,7 +110,12 @@ class HomeController extends Controller
 
 
     }
-
+	
+	/**
+     * Function to delete a user by id
+     *
+     * 
+     */
     public function deleteUser(User $user, jobseeker $jobseeker, diplome $diplome){
         //get id contact 
         $id_user = $_POST['btn_delete_iduser'];

@@ -83,6 +83,7 @@
 
     </head>
   <body>
+	{{-- MENU --}}
 	<nav>
 		<div class="logo"><img src="img/logo_face.jpeg" alt="logo de face polynésie" width="50" height="45"></div>
 		<div class="openMenu"><i class="fa fa-bars"></i></div>
@@ -92,18 +93,18 @@
 					<a href="{{ url('/home') }}">Accueil</a>
 				</li>
 				<li>
-					<a href="{{ url('/home') }}">Nos Actions</a>
+					<a href="https://facepolynesie.org/nos-actions/">Nos Actions</a>
 				</li>
 				<li>
-					<a href="{{ url('/home') }}">Entreprise Partenaires</a>
+					<a href="https://facepolynesie.org/entreprises-partenaires/">Entreprise Partenaires</a>
 				</li>
 				<li>
 					{{-- @if (Auth::user()->id_user_type == 1 ) --}}
 					<a href="{{ url('/recrutement') }}">Recrutement</a>
 					{{-- @endif --}}
 				</li>
-				<li><a href="{{ url('/home') }}">Nous-contactez</a></li>
-				<li><a href="{{ url('/home') }}">Dons</a></li>
+				<li><a href="https://facepolynesie.org/nous-contactez/">Nous-contactez</a></li>
+				<li><a href="https://facepolynesie.org/faites-un-dons/">Dons</a></li>
 				<li>
 					@if (Route::has('login'))
 					<div class="links">
@@ -248,25 +249,13 @@
       </div>
     </div>
     
-    {{-- GESTION DU COMPTE --}}
+    {{-- CONTENUE --}}
     <div class="flex-center position-ref full-height">
         
-
         <div class="content" >
 
             <div class="title m-b-md">
                 <img src="https://anavai.org/uploads/images/5e309c4ccabdc912041494.png">
-            </div>
-
-            <div class="links">
-                <a href="{{ url('/home') }}">Accueil</a>
-                <a href="{{ url('/home') }}">Nos Actions</a>
-                <a href="{{ url('/home') }}">Entreprise Partenaires</a>
-                {{-- @if (Auth::user()->id_user_type == 1 ) --}}
-                <a href="{{ url('/recrutement') }}">Recrutement</a>
-                {{-- @endif --}}
-                <a href="{{ url('/home') }}">Nous-contactez</a>
-                <a href="{{ url('/home') }}">Dons</a>
             </div>
 
             <br>
@@ -561,7 +550,7 @@
         //# sourceURL=pen.js
     </script>
     <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js"></script>
-  
+	{{-- SCRIPT MENU --}}
     <script type="text/javascript" src="js/menu.js"></script>
   </body>
 </html>

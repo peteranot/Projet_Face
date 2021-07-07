@@ -19,9 +19,9 @@ class JobseekerController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Function to create a new jobseeker
      *
-     * @return \Illuminate\Http\Response
+     * 
      */
     public function create(jobseeker $jobseeker)
     {
@@ -44,7 +44,11 @@ class JobseekerController extends Controller
         return view('welcome',compact('listjobseeker','etat','id_update_jobseeker'));
     }
 
-
+	/**
+     * Function to delete a jobseeker by id
+     *
+     * 
+     */
     public function deleteJobseeker(User $user, jobseeker $jobseeker, diplome $diplome){
         //get id contact 
         $id_jobseeker = $_POST['btn_delete_iduser'];
@@ -61,7 +65,11 @@ class JobseekerController extends Controller
         return view('home',compact('listUsers', 'listjobseeker', 'listdiplome', 'etat','id_jobseeker'));
     }
 
-
+	/**
+     * Function to go in the form update jobseeker
+     *
+     * 
+     */
     public function formupdateJobseeker(User $user, jobseeker $jobseeker, diplome $diplome){
         //change etat
         $id_jobseeker = $_POST['btn_update_idjobseeker'];
@@ -74,6 +82,11 @@ class JobseekerController extends Controller
 
     }
 	
+	/**
+     * Function to update a jobseeker by id
+     *
+     * 
+     */
 	public function updateJobseeker(User $user, jobseeker $jobseeker, diplome $diplome){
         //get info jobseeker
         $id_jobseeker = $_POST['btn_update_idjobseeker'];
@@ -106,17 +119,7 @@ class JobseekerController extends Controller
         $listdiplome = $diplome->all();
         return view('home',compact('listUsers', 'listjobseeker', 'listdiplome', 'etat','id_jobseeker'));
 
-
     }
-
-
-
-
-
-
-
-
-
 
     /**
      * Store a newly created resource in storage.
