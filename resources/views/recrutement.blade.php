@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-  <p><label><u><b>Demandeur d'emploie</b></u></label>
+  <p><label><u><b>Demandeur d'emploi</b></u></label>
     {{-- <form class="form-inline my-4 my-lg-0">
       <input class="form-control mr-sm-4" type="search" placeholder="Rechercher des demandeurs d'emploie" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
