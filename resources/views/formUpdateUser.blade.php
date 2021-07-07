@@ -24,19 +24,24 @@
 
 
     <p>
-      <form action="/update_user" method="POST">
-        @csrf
-        <input type="submit" value="Modifier"/>
-      </form>
+		<form action="/update_user" method="POST">
+			@csrf
+			<input type="submit" value="Modifier"/>
+		</form>
 
-      <form method="POST" action="/delete_user">
-        @csrf
-        <input type="hidden" value="{{ $_POST['btn_update_iduser'] }}" name="btn_delete_iduser"/>
-        <input type="submit" value="Supprimer"/>
-      </form>
+		<form method="POST" action="/delete_user">
+			@csrf
+			<input type="hidden" value="{{ $_POST['btn_update_iduser'] }}" name="btn_delete_iduser"/>
+			<input type="submit" value="Supprimer"/>
+		</form>
+	  
+		<form action="cancel" method="POST">
+			@csrf
+			<input type="submit" name="cancel" value="Annuler"/>
+		</form>
     </p>
 
-  </form> 
+	</form> 
 </div>
 @endsection
 

@@ -10,7 +10,18 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+		
+		<!-- CAROUSEL CSS -->
+		<link href="css/carousel.css" rel="stylesheet">
+		<!-- STYLE CSS -->
+		<link href="css/style.css" rel="stylesheet">
+		<!-- MENU CSS -->
+		<link href="css/menu.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+		
+		
+		
+		
         <!-- Styles -->
         <style>
             /* html, body {
@@ -69,616 +80,51 @@
             }
         </style>
 
-        <style>
-          @import url("https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap");
-            *,
-            *::before,
-            *::after {
-            box-sizing: border-box;
-            }
-
-            /* body {
-            margin: 0;
-            padding: 0;
-            font-family: "Titillium Web", sans-serif;
-            } */
-
-            .carousel {
-            display: grid;
-            grid-template-rows: 1fr 3fr 1.5fr;
-            grid-template-columns: 50px 1fr 1fr 1fr 1fr 50px;
-            row-gap: 15vh;
-            position: relative;
-            }
-
-            .progress-bar {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 5px;
-            width: 100%;
-            }
-            .progress-bar__fill {
-            width: 0;
-            height: inherit;
-            background: #c20000;
-            transition: all 0.16s;
-            }
-            .progress-bar--primary {
-            z-index: 2;
-            }
-
-            .main-post-wrapper {
-            grid-row: 1/4;
-            grid-column: 1/7;
-            position: relative;
-            }
-
-            .slides {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-            }
-
-            .main-post {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-            }
-            .main-post__image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            bottom: 0;
-            }
-            .main-post__image img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            -o-object-fit: cover;
-                object-fit: cover;
-            }
-            .main-post__image::before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(14, 13, 14, 0.5);
-            }
-            .main-post__content {
-            position: absolute;
-            top: 40%;
-            left: 4%;
-            transform: translateY(-40%);
-            color: #fff;
-            width: 90%;
-            }
-            .main-post__tag-wrapper {
-            margin: 0;
-            display: inline-flex;
-            overflow: hidden;
-            }
-            .main-post__tag {
-            font-size: 0.95em;
-            background: #c20000;
-            padding: 6px 18px;
-            }
-            .main-post__title {
-            font-weight: 700;
-            font-size: 1.95em;
-            line-height: 1.25;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-            }
-            .main-post__link {
-            text-decoration: none;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            display: inline-flex;
-            align-items: center;
-            }
-            .main-post__link-text {
-            font-size: 0.9em;
-            }
-            .main-post__link-icon--arrow {
-            margin-left: 12px;
-            }
-            .main-post__link-icon--play-btn {
-            margin-right: 12px;
-            }
-
-            .main-post__link:hover .main-post__link-text,
-            .main-post__link:hover .main-post__link-icon--arrow path {
-            color: #c20000;
-            stroke: #c20000;
-            }
-
-            .main-post--active {
-            top: 0;
-            z-index: 1;
-            transition: top 0.9s 0.4s ease-out;
-            }
-
-            .main-post--not-active {
-            top: 100%;
-            z-index: 0;
-            transition: top 0.75s 2s;
-            }
-
-            .main-post.main-post--active .main-post__tag-wrapper {
-            width: 25%;
-            transition: all 0.98s 1.9s;
-            }
-
-            .main-post.main-post--not-active .main-post__tag-wrapper {
-            width: 0;
-            transition: width 0.3s 0.2s;
-            }
-
-            .main-post.main-post--active .main-post__title {
-            opacity: 1;
-            transform: translateY(0);
-            transition: opacity 0.8s 1.42s, transform 0.5s 1.4s;
-            }
-
-            .main-post.main-post--not-active .main-post__title {
-            transform: translateY(40px);
-            opacity: 0;
-            transition: transform 0.2s 0.35s, opacity 0.5s 0.2s;
-            }
-
-            .main-post.main-post--active .main-post__link {
-            opacity: 1;
-            transition: opacity 0.9s 2.2s;
-            }
-
-            .main-post.main-post--not-active .main-post__link {
-            opacity: 0;
-            transition: opacity 0.5s 0.2s;
-            }
-
-            .posts-wrapper {
-            grid-row: 3/4;
-            grid-column: 3/6;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            -moz-column-gap: 14px;
-                column-gap: 14px;
-            z-index: 1;
-            }
-
-            .post {
-            background: rgba(14, 13, 14, 0.6);
-            opacity: 0.3;
-            color: #fff;
-            position: relative;
-            padding: 16px 20px;
-            }
-            .post__header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8em;
-            }
-            .post__tag {
-            color: #80837e;
-            }
-            .post__title {
-            font-weight: 400;
-            font-size: 0.95em;
-            line-height: 1.5;
-            }
-            .post--active {
-            opacity: 1;
-            background: rgba(14, 13, 14, 0.75);
-            }
-            .post:not(.post--active) {
-            pointer-events: none;
-            }
-
-            .hide-on-mobile {
-            display: none;
-            }
-
-            @media screen and (min-width: 768px) {
-            .main-post__title {
-                font-size: 2.9em;
-            }
-            }
-            @media screen and (min-width: 1024px) {
-            .hide-on-mobile {
-                display: grid;
-            }
-
-            .posts-wrapper {
-                grid-column: 2/6;
-            }
-
-            .hide-on-desktop {
-                display: none;
-            }
-            }
-            @media screen and (min-width: 1440px) {
-            .main-post__content {
-                width: 45%;
-            }
-
-            .posts-wrapper {
-                grid-column: 3/6;
-            }
-            }
-        </style>
-
-        <style>
-
-            /* *{
-                border: black solid 1px;
-            } */
-
-            h1,h2{
-                font-family: Georgia, 'Times New Roman', Times, serif;
-            }
-
-            a{
-                text-decoration: none;
-                color: black;
-            }
-
-            /* PRESENTATION */
-            .presentation{
-                background-color: rgb(239, 239, 239);
-                border-bottom-right-radius: 10px;
-                border-bottom-left-radius: 10px;
-                box-shadow: 12px 12px 2px 1px rgb(194, 194, 194);
-            }
-
-            .a_notre_sujet{
-                margin-top: 3%;
-            }
-
-            #texte_in_presentation{
-                margin-bottom: 5%;
-            }
-
-            .prioritary{
-                z-index: 1;
-            }
-
-            #btn{
-                position: fixed;
-                box-shadow: 10px 5px 5px grey;
-                background-color: white;
-            }
-
-            .btnF{
-                color: white;
-                background-color: blue;
-            }
-
-            .btnI{
-                color: white;
-                background-color: rgb(255, 51, 217);
-            }
-            
-            .btnY{
-                color: white;
-                background-color: red;
-            }
-
-            .video{
-                margin-bottom: 5%;
-            }
-            /* RESPONSIVE VIDEO */
-
-            @media screen and (max-width: 835px){
-                .item{
-                    width:600px;
-                }
-            }
-
-            @media screen and (max-width: 790px){
-                .item{
-                    width:550px;
-                }
-            }
-
-            @media screen and (max-width: 740px){
-                .item{
-                    width:450px;
-                }
-            }
-
-            @media screen and (max-width: 645px){
-                .item{
-                    width:370px;
-                }
-            }
-
-            @media screen and (max-width: 558px){
-                .item{
-                    width:270px;
-                }
-            }
-
-            @media screen and (max-width: 460px){
-                .item{
-                    width:190px;
-                }
-            }
-            /* PRESENTATION */
-
-            /* WHO */
-            
-
-            .back-g_who{
-                background-color: rgb(242, 242, 242);
-            }
-
-            .equipe{
-                background-color: white;
-                border-bottom-right-radius: 10px;
-                border-bottom-left-radius: 10px;
-                box-shadow: 12px 12px 2px 1px rgb(194, 194, 194);
-            }
-
-            .icone{
-                margin-top: 5%;
-                margin-bottom: 5%;
-            }
-            /* Responsive row */
-
-            @media screen and (max-width: 767px){
-                .response_bloc{
-                    width:600px;
-                }
-            }
-
-            @media screen and (max-width: 670px){
-                .response_bloc{
-                    width:470px;
-                }
-            }
-
-            @media screen and (max-width: 550px){
-                .response_bloc{
-                    width:370px;
-                }
-            }
-
-            @media screen and (max-width: 461px){
-                .response_bloc{
-                    width:290px;
-                }
-            }
-
-            @media screen and (max-width: 390px){
-                .response_bloc{
-                    width:250px;
-                }
-            }
-
-            /* .icone_profils{
-                border-radius: 100%;
-            } */
-
-                /* Conteneur principal */
-            .overlay-image {
-                position: relative;
-                width: 90%;
-            }
-
-                /* Image originale */
-            .overlay-image .image {
-                border-radius: 100%;
-                display: block;
-                width: 100%;
-                height: auto;
-            }
-
-                /* Texte original */
-            .overlay-image .text {
-                color: #fff;
-                /* font-size: 30px; */
-                line-height: 1.5em;
-                text-shadow: 2px 2px 2px #000;
-                text-align: center;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 100%;
-            }
-
-            /* Responsive text */
-
-            @media screen and (max-width: 3000px ){
-                .text{
-                    font-size:30px;
-                }
-            }
-
-            @media screen and (max-width: 1395px){
-                .text{
-                    font-size:20px;
-                }
-            }
-
-            @media screen and (max-width: 1200px){
-                .text{
-                    font-size:20px;
-                }
-            }
-
-            @media screen and (max-width: 1110px){
-                .text{
-                    font-size:15px;
-                }
-            }
-
-            @media screen and (max-width: 1024px){
-                .text{
-                    font-size:17px;
-                }
-            }
-
-            @media screen and (max-width: 768px){
-                .text{
-                    font-size:17px;
-                }
-            }
-
-            @media screen and (max-width: 462px){
-                .text{
-                    font-size:20px;
-                }
-            }
-
-            @media screen and (max-width: 432px){
-                .text{
-                    font-size:15px;
-                }
-            }
-
-            @media screen and (max-width: 375px){
-                .text{
-                    font-size:17px;
-                }
-            }
-
-                /* Overlay */
-            .overlay-image .hover {
-                border-radius: 100%;
-                position: absolute;
-                top: 0;
-                height: 100%;
-                width: 100%;
-                opacity: 0;
-                transition: .5s ease;
-            }
-
-                /* Apparition overlay sur passage souris */
-            .overlay-image:hover .hover {
-                opacity: 1;
-            }
-
-            .overlay-image .normal {
-                transition: .5s ease;
-            }
-
-            .overlay-image:hover .normal {
-                opacity: 0;
-            }
-
-            .overlay-image .hover {
-                background-color: rgba(0,0,0,0.5);
-            }
-            /* WHO */
-            
-            /* MISSION */
-            .missions{
-                background-color: rgb(239, 239, 239);
-                border-bottom-right-radius: 10px;
-                border-bottom-left-radius: 10px;
-                box-shadow: 12px 12px 2px 1px rgb(194, 194, 194);
-            }
-
-            .text_missions{
-                margin-top: 5%;
-            }
-
-            /* Conteneur principal */
-            .overlay-images {
-                position: relative;
-                width: 80%;
-            }
-
-                /* Image originale */
-            .overlay-images .image {
-                border-radius: 20px;
-                display: block;
-                width: 100%;
-                height: auto;
-            }
-
-                /* Texte original */
-            .overlay-images .text {
-                color: #fff;
-                font-size: 30px;
-                line-height: 1.5em;
-                text-shadow: 2px 2px 2px #000;
-                text-align: center;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 100%;
-            }
-
-                /* Overlay */
-            .overlay-images .hover {
-                border-radius: 20px;
-                position: absolute;
-                top: 0;
-                height: 100%;
-                width: 100%;
-                opacity: 0;
-                transition: .5s ease;
-            }
-
-                /* Apparition overlay sur passage souris */
-            .overlay-images:hover .hover {
-                opacity: 1;
-            }
-
-            .overlay-images .normal {
-                transition: .5s ease;
-            }
-
-            .overlay-images:hover .normal {
-                opacity: 0;
-            }
-
-            .overlay-images .hover {
-                background-color: rgba(0,0,0,0.5);
-            }
-
-            .missions_du_bas{
-                margin-top: 50px;
-            }
-            /* MISSION */
-
-            /* FOOTER */
-            .back-g_footer{
-                background-color: rgb(242, 242, 242);
-                color:rgb(239, 239, 239)
-            }
-
-            .copyright_on_footer{
-                margin-top: 5%;
-                margin-left: 5%;
-                margin-bottom: 3%;
-            }
-            /* FOOTER */
-
-            .row{
-                margin:0;
-                padding: 0;
-            }
-        </style>
 
     </head>
   <body>
+	<nav>
+		<div class="logo"><img src="img/logo_face.jpeg" alt="logo de face polynésie" width="50" height="45"></div>
+		<div class="openMenu"><i class="fa fa-bars"></i></div>
+		<div class="links">
+			<ul class="mainMenu">
+				<li>
+					<a href="{{ url('/home') }}">Accueil</a>
+				</li>
+				<li>
+					<a href="{{ url('/home') }}">Nos Actions</a>
+				</li>
+				<li>
+					<a href="{{ url('/home') }}">Entreprise Partenaires</a>
+				</li>
+				<li>
+					{{-- @if (Auth::user()->id_user_type == 1 ) --}}
+					<a href="{{ url('/recrutement') }}">Recrutement</a>
+					{{-- @endif --}}
+				</li>
+				<li><a href="{{ url('/home') }}">Nous-contactez</a></li>
+				<li><a href="{{ url('/home') }}">Dons</a></li>
+				<li>
+					@if (Route::has('login'))
+					<div class="links">
+					@auth
+						<a href="{{ url('/home') }}">Mon compte</a>
+						<!--<a href="{{ url('/home') }}">Déconnexion</a>-->
+					@else
+						<!--<a href="{{ url('/home') }}">Accueil</a>-->
+						<a href="{{ route('login') }}">Se connecter</a>
 
+						{{-- @if (Route::has('register'))
+						<a href="{{ route('register') }}">S'inscrire</a>
+						@endif --}}
+					@endauth
+					</div>
+					@endif
+				</li>
+				<div class="closeMenu"><i class="fa fa-times"></i></div>
+			</ul>
+		</div>
+	</nav>
     {{-- CAROUSEL --}}
     <div class="carousel">
         <div class="progress-bar progress-bar--primary hide-on-desktop">
@@ -804,21 +250,7 @@
     
     {{-- GESTION DU COMPTE --}}
     <div class="flex-center position-ref full-height">
-        @if (Route::has('login'))
-            <div class="top-right links">
-            @auth
-                <a href="{{ url('/home') }}">Mon compte</a>
-                <!--<a href="{{ url('/home') }}">Déconnexion</a>-->
-            @else
-                <!--<a href="{{ url('/home') }}">Accueil</a>-->
-                <a href="{{ route('login') }}">Se connecter</a>
-
-                {{-- @if (Route::has('register'))
-                <a href="{{ route('register') }}">S'inscrire</a>
-                @endif --}}
-            @endauth
-            </div>
-        @endif
+        
 
         <div class="content" >
 
@@ -1074,9 +506,7 @@
                 </div>
             </div>
             <!-- FOOTER -->
-
         </div>
-
     </div>
 
 
@@ -1132,6 +562,6 @@
     </script>
     <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js"></script>
   
-    
+    <script type="text/javascript" src="js/menu.js"></script>
   </body>
 </html>

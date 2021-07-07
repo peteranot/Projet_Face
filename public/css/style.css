@@ -1,0 +1,354 @@
+
+/* *{
+	border: black solid 1px;
+} */
+
+h1,h2{
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+/* PRESENTATION */
+.presentation{
+	background-color: rgb(239, 239, 239);
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	box-shadow: 12px 12px 2px 1px rgb(194, 194, 194);
+}
+
+.a_notre_sujet{
+	margin-top: 3%;
+}
+
+#texte_in_presentation{
+	margin-bottom: 5%;
+}
+
+.prioritary{
+	z-index: 1;
+}
+
+#btn{
+	position: fixed;
+	box-shadow: 10px 5px 5px grey;
+	background-color: white;
+}
+
+.btnF{
+	color: white;
+	background-color: blue;
+}
+
+.btnI{
+	color: white;
+	background-color: rgb(255, 51, 217);
+}
+
+.btnY{
+	color: white;
+	background-color: red;
+}
+
+.video{
+	margin-bottom: 5%;
+}
+/* RESPONSIVE VIDEO */
+
+@media screen and (max-width: 835px){
+	.item{
+		width:600px;
+	}
+}
+
+@media screen and (max-width: 790px){
+	.item{
+		width:550px;
+	}
+}
+
+@media screen and (max-width: 740px){
+	.item{
+		width:450px;
+	}
+}
+
+@media screen and (max-width: 645px){
+	.item{
+		width:370px;
+	}
+}
+
+@media screen and (max-width: 558px){
+	.item{
+		width:270px;
+	}
+}
+
+@media screen and (max-width: 460px){
+	.item{
+		width:190px;
+	}
+}
+/* PRESENTATION */
+
+/* WHO */
+
+
+.back-g_who{
+	background-color: rgb(242, 242, 242);
+}
+
+.equipe{
+	background-color: white;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	box-shadow: 12px 12px 2px 1px rgb(194, 194, 194);
+}
+
+.icone{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+/* Responsive row */
+
+@media screen and (max-width: 767px){
+	.response_bloc{
+		width:600px;
+	}
+}
+
+@media screen and (max-width: 670px){
+	.response_bloc{
+		width:470px;
+	}
+}
+
+@media screen and (max-width: 550px){
+	.response_bloc{
+		width:370px;
+	}
+}
+
+@media screen and (max-width: 461px){
+	.response_bloc{
+		width:290px;
+	}
+}
+
+@media screen and (max-width: 390px){
+	.response_bloc{
+		width:250px;
+	}
+}
+
+/* .icone_profils{
+	border-radius: 100%;
+} */
+
+	/* Conteneur principal */
+.overlay-image {
+	position: relative;
+	width: 90%;
+}
+
+	/* Image originale */
+.overlay-image .image {
+	border-radius: 100%;
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+	/* Texte original */
+.overlay-image .text {
+	color: #fff;
+	/* font-size: 30px; */
+	line-height: 1.5em;
+	text-shadow: 2px 2px 2px #000;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+}
+
+/* Responsive text */
+
+@media screen and (max-width: 3000px ){
+	.text{
+		font-size:30px;
+	}
+}
+
+@media screen and (max-width: 1395px){
+	.text{
+		font-size:20px;
+	}
+}
+
+@media screen and (max-width: 1200px){
+	.text{
+		font-size:20px;
+	}
+}
+
+@media screen and (max-width: 1110px){
+	.text{
+		font-size:15px;
+	}
+}
+
+@media screen and (max-width: 1024px){
+	.text{
+		font-size:17px;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.text{
+		font-size:17px;
+	}
+}
+
+@media screen and (max-width: 462px){
+	.text{
+		font-size:20px;
+	}
+}
+
+@media screen and (max-width: 432px){
+	.text{
+		font-size:15px;
+	}
+}
+
+@media screen and (max-width: 375px){
+	.text{
+		font-size:17px;
+	}
+}
+
+/* Overlay */
+.overlay-image .hover {
+	border-radius: 100%;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+}
+
+	/* Apparition overlay sur passage souris */
+.overlay-image:hover .hover {
+	opacity: 1;
+}
+
+.overlay-image .normal {
+	transition: .5s ease;
+}
+
+.overlay-image:hover .normal {
+	opacity: 0;
+}
+
+.overlay-image .hover {
+	background-color: rgba(0,0,0,0.5);
+}
+/* WHO */
+
+/* MISSION */
+.missions{
+	background-color: rgb(239, 239, 239);
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	box-shadow: 12px 12px 2px 1px rgb(194, 194, 194);
+}
+
+.text_missions{
+	margin-top: 5%;
+}
+
+/* Conteneur principal */
+.overlay-images {
+	position: relative;
+	width: 80%;
+}
+
+	/* Image originale */
+.overlay-images .image {
+	border-radius: 20px;
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+	/* Texte original */
+.overlay-images .text {
+	color: #fff;
+	font-size: 30px;
+	line-height: 1.5em;
+	text-shadow: 2px 2px 2px #000;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+}
+
+	/* Overlay */
+.overlay-images .hover {
+	border-radius: 20px;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+}
+
+	/* Apparition overlay sur passage souris */
+.overlay-images:hover .hover {
+	opacity: 1;
+}
+
+.overlay-images .normal {
+	transition: .5s ease;
+}
+
+.overlay-images:hover .normal {
+	opacity: 0;
+}
+
+.overlay-images .hover {
+	background-color: rgba(0,0,0,0.5);
+}
+
+.missions_du_bas{
+	margin-top: 50px;
+}
+/* MISSION */
+
+/* FOOTER */
+.back-g_footer{
+	background-color: rgb(242, 242, 242);
+	color:rgb(239, 239, 239)
+}
+
+.copyright_on_footer{
+	margin-top: 5%;
+	margin-left: 5%;
+	margin-bottom: 3%;
+}
+/* FOOTER */
+
+.row{
+	margin:0;
+	padding: 0;
+}
